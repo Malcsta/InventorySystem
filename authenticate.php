@@ -8,7 +8,7 @@
 
 ****************/
 
-  define('ADMIN_LOGIN','Mahri');
+  define('ADMIN_LOGIN','Admin');
 
   define('ADMIN_PASSWORD','mypass');
 

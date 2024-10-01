@@ -2,6 +2,8 @@
 // Database connection
 require 'connect.php';
 
+$message = ""; // Initialize message variable
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signup'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -13,23 +15,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signup'])) {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch results
 
     if (count($result) > 0) {
-        echo "Username or email already taken!";
+        $message = "<div class='error'>Username or email already taken!</div>"; // Error message
     } else {
         // Insert new user
         $stmt = $db->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
         if ($stmt->execute([$username, $email, $password])) {
-            echo "Sign-up successful! You can now sign in.";
+            $message = "<div class='success'>Sign-up successful! You can now sign in.</div>"; // Success message
         } else {
-            echo "Error: " . $stmt->errorInfo()[2]; // Display PDO error
+            $message = "<div class='error'>Error: " . $stmt->errorInfo()[2] . "</div>"; // Display PDO error
         }
     }
 }
 ?>
 
-<form method="post" action="">
-    <h2>Sign Up</h2>
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <button type="submit" name="signup">Sign Up</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="home">
+        <a href="index.php" class="home">Home</a>
+    </div>
+    <div class="container">
+    <form method="post" action="">
+        <h2>Sign Up</h2>
+        <input class="signup" type="text" name="username" placeholder="Username" required>
+        <input class="signup" type="email" name="email" placeholder="Email" required>
+        <input class="signup" type="password" name="password" placeholder="Password" required>           
+        <button class="signup" type="submit" name="signup">Sign Up</button>
+    </form>
+    <?php if (!empty($message)) echo $message; // Display the error message ?>
+    </div>
+</body>
+</html>

@@ -5,6 +5,8 @@ session_start();
 // Database connection
 require 'connect.php'; 
 
+$message = ""; // Initialize message variable
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signin'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -27,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signin'])) {
         exit();
     } else {
         // Invalid credentials message
-        echo "Invalid username or password!";
+        $message = "<div class='error'>Invalid username or password!</div>";
     }
 }
 ?>
@@ -47,10 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signin'])) {
     <div class="container">
         <form method="post" action="">
             <h2>Sign In</h2>
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" name="signin">Sign In</button>
+            <input class="signin" type="text" name="username" placeholder="Username" required>
+            <input class="signin" type="password" name="password" placeholder="Password" required>
+            <button class="signin" type="submit" name="signin">Sign In</button>
         </form>
+        <?php if (!empty($message)) echo $message; // Display the error message ?>
     </div>
 </body>
 </html>

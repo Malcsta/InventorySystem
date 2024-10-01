@@ -2,6 +2,11 @@
 // Database connection
 require 'connect.php'; // Ensure this path is correct
 
+if (!isset($_SESSION['user_id'])) {
+    echo "You must be signed in to view this page.";
+    exit();
+}
+
 // Fetch available tools (where is_available = 1)
 $stmt = $db->prepare("SELECT * FROM tools WHERE is_available = 1");
 $stmt->execute();

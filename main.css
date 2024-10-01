@@ -16,9 +16,11 @@ h1 {
 .container {
     margin: auto;
     align-items: center;
-    padding-top: 100px;
+    margin-top: 100px;
     width: 500px;
     text-align: center;
+    border: 4px solid white;
+    border-radius: 8px;
 }
 
 .optioncontainer {
@@ -29,9 +31,34 @@ h1 {
     text-align: center;
 }
 
+.signup {
+    padding: 5px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.signin {
+    padding: 5px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
 a {
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.error, .success  {
+    color: aliceblue;
+    font-family: "Roboto";
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+.error {
+    padding-top: 5px;
+    color: rgb(219, 91, 91);
 }
 
 .signdiv {
@@ -71,3 +98,34 @@ li {
     font-family: "Roboto";
 }
 
+.sign:hover {
+    box-shadow: 0 0 20px #10A37F; 
+}
+
+.sign {
+    font-weight: 500;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #10A37F;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+.optionlinks:hover {
+    box-shadow: 0 0 20px #10A37F; 
+}
+
+.optionlinks {
+    font-weight: 500;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #10A37F;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
