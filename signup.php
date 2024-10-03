@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signup'])) {
     <title>Sign Up</title>
 </head>
 <body>
-    <div class="home">
-        <a href="index.php" class="home">Home</a>
+    <div class=header>
+        <a href="index.php"><img src="images/ajlogo.png" alt="logo"></a>
     </div>
     <div class="container">
     <form method="post" action="">

@@ -21,8 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signin'])) {
     // Verify the password
     if ($user && password_verify($password, $user['password'])) {
         // Store user info in session
-        $_SESSION['user_id'] = $user['id'];         // Assuming the user has an 'id' field
-        $_SESSION['username'] = $user['username'];   // Store the username in the session
+        $_SESSION['user_id'] = $user['id'];    
+        $_SESSION['username'] = $user['username'];  
+        $_SESSION['admin'] = $user['admin'];  
 
         // Redirect to the main page
         header("Location: main.php");
@@ -43,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signin'])) {
     <title>Sign In</title>
 </head>
 <body>
-    <div class="home">
-        <a href="index.php" class="home">Home</a>
+    <div class=header>
+        <a href="index.php"><img src="images/ajlogo.png" alt="logo"></a>
     </div>
     <div class="container">
         <form method="post" action="">

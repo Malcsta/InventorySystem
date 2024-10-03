@@ -8,6 +8,18 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+$stmt = $db->prepare("SELECT * FROM users WHERE id = ?");
+$stmt->execute([$_SESSION['user_id']]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$user) {
+
+    echo "<div class='error'>User not found!</div>";
+    exit();
+}
+
+$username = $user['username']; 
+$isAdmin = $user['admin']; 
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +31,8 @@ if (!isset($_SESSION['user_id'])) {
     <title>Inventory</title>
 </head>
 <body>
-    <div class="home">
-        <a href="logout.php" class="home">Sign out</a>
+    <div class=header>
+        <a href="main.php"><img src="images/ajlogo.png" alt="logo"></a>
     </div>
     <div class="optioncontainer">
         <h1 class="">Good afternoon <?php echo $_SESSION['username'] . "!"; ?></h1>
@@ -30,9 +42,16 @@ if (!isset($_SESSION['user_id'])) {
             <a href="return.php" class="optionlinks">Return an item</a>
             <a href="inventory.php" class="optionlinks">View my items</a>
         </div>
-        <form action="create.php" method="POST">
-
-        </form>
+        <div>
+        <?php if ($isAdmin == 1): ?>
+            <div class="admincontrols">
+                <a href="admincontrolpanel.php" class="adminlink">Admin Control Panel</a>
+            </div>
+        <?php endif; ?>
+        <div class="admincontrols">
+            <a class="logout" href="logout.php">Log Out</a>
+        </div>
+        </div>
     </div>
 </body>
 </html>

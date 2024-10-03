@@ -1,34 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body {
-    background-color: #303030;
+@font-face {
+    font-family: 'CustomFont';
+    src: url('fonts/westmount-2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+body {
+    background-color: #e7e3d8;
+    zoom: 90%;
+}
+
+/*
+Un-comment this for a solid BG image
+body {
+    background-image: url('images/BG.png.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+*/
+
 h1, h2, a {
-    color: aliceblue;
+    color: rgb(22, 22, 22);
     font-family: "Roboto";
 }
 
 h1 {
-    font-size: 40px;
+    font-family: 'CustomFont';
+    font-size: 36px;
+}
+
+.header {
+    align-items: center;
+    text-align: center;
+    margin: 50px;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: .2rem;
+    font-size: 72px;
+    font-weight: bold;
+    font-family: 'CustomFont';
 }
 
 .container {
+    padding: 16px;
     margin: auto;
     align-items: center;
-    margin-top: 100px;
-    width: 500px;
+    width: 700px;
     text-align: center;
-    border: 4px solid white;
     border-radius: 8px;
+    background-color: #fffefc;
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 5px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
+
 .optioncontainer {
-    padding-top: 100px;
+    padding: 16px;
     margin: auto;
     align-items: center;
-    width: 500px;
+    width: 700px;
     text-align: center;
+    background-color: #fffefc;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 .signup {
@@ -67,11 +106,12 @@ a {
 
 .options {
     padding-top: 30px;
+    margin-bottom: 30px;
 }
 
 p {
     list-style: none;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     font-family: "Roboto";
 }
 
@@ -99,7 +139,7 @@ li {
 }
 
 .sign:hover {
-    box-shadow: 0 0 20px #10A37F; 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .sign {
@@ -109,23 +149,97 @@ li {
     margin: 0 10px;
     text-decoration: none;
     color: rgb(255, 255, 255);
-    background-color: #10A37F;
+    background-color: #19a85c;
     border-radius: 5px;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.1s ease;
+    
 }
 
 .optionlinks:hover {
-    box-shadow: 0 0 20px #10A37F; 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    
 }
 
 .optionlinks {
     font-weight: 500;
     display: inline-block;
-    padding: 10px 20px;
-    margin: 0 10px;
+    padding: 10px 10px;
+    width: 190px;
     text-decoration: none;
     color: rgb(255, 255, 255);
-    background-color: #10A37F;
+    background-color: #19a85c;
     border-radius: 5px;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.1s ease;
+    
+}
+
+.admincontrols {
+    font-weight: 500;
+    padding: 10px 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #0e7cd6;
+    border-radius: 5px;
+    transition: box-shadow 0.1s ease;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.admincontrols:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px #0e7cd6; 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.logout {
+    font-weight: 500;
+    margin-top: 20px;
+    padding: 10px;
+    margin: 10 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    transition: box-shadow 0.1s ease;
+    margin-top: 20px;
+}
+
+.aboutdiv {
+    text-align: center;
+    align-items: center;
+    width: 500px;
+    margin: auto;
+}
+
+.aboutdiv p {
+    font-family: 'Roboto';
+    color: black;
+}
+
+.about2 {
+    font-size: 14px;
+}
+
+tr, td, th {
+    font-family: 'Roboto';
+}
+
+table {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+th, tr, td {
+    padding: 10px;
+}
+
+img {
+    width: 200px;
 }

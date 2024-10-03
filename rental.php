@@ -2,6 +2,8 @@
 // Database connection
 require 'connect.php'; // Ensure this path is correct
 
+session_start();
+
 if (!isset($_SESSION['user_id'])) {
     echo "You must be signed in to view this page.";
     exit();
@@ -22,19 +24,18 @@ $tools = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Available Tools for Rental</title>
 </head>
 <body>
-    <div class="home">
-        <a href="main.php" class="home">Home</a>
+    <div class=header>
+        <a href="main.php"><img src="images/ajlogo.png" alt="logo"></a>
     </div>
     <div class="container">
         <h1>Available Tools for Rental</h1>
-
         <?php if ($tools): ?>
             <ul>
                 <?php foreach ($tools as $tool): ?>
                     <li>
                         <h2><?php echo htmlspecialchars($tool['name']); ?></h2>
                         <p><?php echo htmlspecialchars($tool['description']); ?></p>
-                        <p>Rental Price: $<?php echo number_format($tool['rental_price'], 2); ?></p>
+                        <p>Amount left: <?php echo htmlspecialchars($tool['quantity_left']);?></p> 
                     </li>
                 <?php endforeach; ?>
             </ul>
