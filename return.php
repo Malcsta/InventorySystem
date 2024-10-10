@@ -29,7 +29,7 @@ $rented_tools = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class=header>
-        <a href="main.php"><img src="images/ajlogotrans.png" alt="logo"></a>
+        <a href="main.php"><img src="images/ajlogo.png" alt="logo"></a>
     </div>
     <div class="container">
         <h1>Which item would you like to return?</h1>

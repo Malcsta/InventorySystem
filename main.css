@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #e7e3d8;
+    background-color: #e0e7da;
     zoom: 90%;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 */
 
-h1, h2, a {
+h1, h2 {
     color: rgb(22, 22, 22);
     font-family: "Roboto";
 }
@@ -53,7 +53,7 @@ h1 {
     width: 700px;
     text-align: center;
     border-radius: 8px;
-    background-color: #fffefc;
+    background-color: #ffffff;
     display: block;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 5px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
@@ -65,7 +65,7 @@ h1 {
     align-items: center;
     width: 700px;
     text-align: center;
-    background-color: #fffefc;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
@@ -82,10 +82,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-a {
-    padding-left: 20px;
-    padding-right: 20px;
-}
 
 .error, .success  {
     color: aliceblue;
@@ -152,6 +148,7 @@ li {
     background-color: #19a85c;
     border-radius: 5px;
     transition: box-shadow 0.1s ease;
+    font-family: "Roboto";
     
 }
 
@@ -195,7 +192,6 @@ li {
 
 a {
     text-decoration: none;
-    color: white;
 }
 
 .logout {
@@ -243,3 +239,15 @@ th, tr, td {
 img {
     width: 200px;
 }
+
+.signupsuccess {
+    color: white;
+    background-color: #0e7cd6;
+    font-weight: bold;
+    height: 35px;
+    font-size: 22px;
+    border-radius: 8px;
+    text-align: center;
+    padding-top: 8px;
+}
+

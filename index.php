@@ -1,5 +1,14 @@
 <?php
+
 require('connect.php');
+
+session_start();
+
+if (isset($_SESSION['signup_success'])) {
+    $message = "<p class='signupsuccess'>" . $_SESSION['signup_success'] . "</p>";
+    unset($_SESSION['signup_success']); 
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +24,7 @@ require('connect.php');
         <a href="index.php"><img src="images/ajlogo.png" alt="logo"></a>
     </div>
     <div class="container">
+        <?php if (!empty($message)) echo '<p class="signupsuccess">Sign up successful! You can now sign in.</p>'?>
         <h1>Welcome to the ArtsJunktion Tool Inventory System.</h1>
         <h2>Sign in or sign up below:</h2>
         <div class="signdiv">
@@ -25,7 +35,7 @@ require('connect.php');
             <p class="about">ArtsJunktion is excited to provide a diverse selection of equipment, stationery, and materials for Winnipeg's growing art community.</p>
             <p class="about">Signing up is quick and simple! Just hit the button above to get started.</p>
             <p class="about"><p>
-            <p class="about2">Copyright © 2024 By Malcolm White, for ArtsJunktion Ltd.</p>
+            <p class="about2">Copyright © 2024 By <a href="https://github.com/Malcsta">Malcolm White</a>, for ArtsJunktion Ltd.</p>
         </div>
     </div>
 </body>
